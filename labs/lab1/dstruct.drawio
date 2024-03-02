@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" modified="2024-02-24T12:02:28.662Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="2hLTQrMjBeltlYvB6GMG" version="23.1.6" type="device">
+  <diagram name="Страница — 1" id="Pu32ZtkRmZXlRBuJjnst">
+    <mxGraphModel dx="796" dy="1754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-7" value="Запись 1&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="-10" width="600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-1" value="Код материала 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-2" value="Еденица &lt;br&gt;измерения 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-3" value="Номер цеха 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-4" value="Код детали 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-5" value="Норма расхода 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-6" value="1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="-10" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-22" value="..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="90" width="600" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-28" value="..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="90" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-29" value="Запись k&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="140" width="600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-30" value="Код материала k" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-31" value="Еденица &lt;br&gt;измерения k" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-32" value="Номер цеха k" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-33" value="Код детали k" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-34" value="Норма расхода k" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="190" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-35" value="k" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="140" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-43" value="Запись n&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="290" width="600" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-44" value="Код материала n" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="340" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-45" value="Еденица &lt;br&gt;измерения n" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="340" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-46" value="Номер цеха n" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="340" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-47" value="Код детали n" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="340" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-48" value="Норма расхода n" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="340" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-49" value="n" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="290" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-50" value="..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="240" width="600" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HnCrC3DoDgyr9LynNbp6-51" value="..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="240" width="120" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
