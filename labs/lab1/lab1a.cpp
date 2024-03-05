@@ -29,6 +29,9 @@ typedef unordered_map<unsigned int, norm > tytbl;
 
 #include "lab1exa.cpp"
 
+#define ev 10
+int evi = 0;
+
 tytbl tbl;
 vector<int> stbl;
 uimap maps[4] = {{},{},{},{}};
@@ -47,9 +50,9 @@ list<int> adressSearch(string icol, bool wo);
 template<typename tmap, typename t> void putmap(tmap &map, t key, int value);
 
 void qSortMenu();
-void qSortUi(int nocol);
-void qSortStr();
-void qSortI();
+void qSortUi(int nocol, vector<int>::iterator stbl, int k);
+void qSortStr(vector<int>::iterator stbl, int k);
+void qSortI(vector<int>::iterator stbl, int k);
 
 void removeMarkMenu();
 void removeMarkIndex(unsigned int index, bool wo);
@@ -100,7 +103,7 @@ void getdata(){
         putmap(maps[2],    tbl[i].workshopNum,     i);
         putmap(maps[3],    tbl[i].consumptionNorm, i);
     }
- 
+
     return;
 }
 
@@ -192,11 +195,12 @@ void qSortMenu(){
     if (icol != "3" && icol != "i"){
         int nocol = stoi(icol);
         nocol--;
-        qSortUi(nocol);
-    } else if(icol == ""3) {
-        qSortStr();
+        if (nocol > 3) nocol--;
+        qSortUi(nocol, stbl.begin(), k-1);
+    } else if(icol == "3") {
+        qSortStr(stbl.begin(), k-1);
     } else {
-        qSortI();
+        qSortI(stbl.begin(), k-1);
     }
     cout << "Отсортировано!\n"
          << "[x] В главное меню\n";
@@ -235,19 +239,39 @@ list<int>::const_iterator whereList(const list<int>& l, int a) {
     return current;
 }
 
-void removeMarkIndex(unsigned int index, bool wo){
+void clearHash(unsigned int index){
     int j = 0;
     for(int i = 0; i < 5 && j < 4; i++){
         if (i==2)i++;
         auto d = maps[j].find(tbl[index].get(i));
         if (d != maps[j].end()) {
-            d->second.erase(whereList(d->second, index));
+            auto lst = whereList(d->second, index);
+            if (lst != d->second.end())
+                d->second.erase(lst);
         }
         j++;
     }
-    tbl[index] = {};
+}
+
+void removeMarkIndex(unsigned int index, bool wo){
+    tbl[index].measure = "~";
     cout << "Строка " << index << " успешно удалена\n";
-    k--;
+    evi++;
+    if (evi == ev){
+        int j = 0;
+        for(int i = 0; i < k - j; i++){
+            if (tbl[stbl[i+j]].measure == "~") {
+                j++;
+                clearHash(stbl[i]);
+                tbl.erase(tbl.find(stbl[i]));
+            }
+            stbl[i] = stbl[i+j];
+        }
+        k-=ev;
+        for(int i = 0; i < ev; i++) stbl.pop_back();
+        cout << "Чистка мусора прошла успешно\n";
+        evi = 0;
+    }
     if (wo){
         cout << "[x] В главное меню\n";
         string outi;
@@ -265,31 +289,67 @@ void removeMarkArray(list<int> indexes){
     cin  >> outi;
 } 
 
-void qSortUi(int nocol) {
-    int i = 0, j = N;
-    T temp, p;
-    p = a [N>>1];
+void qSortUi(int nocol, vector<int>::iterator stbl, int k) {
+    int i = 0, j = k;
+    unsigned int p;
+    p = tbl[*(stbl+(k>>1))].get(nocol);
+    int temp;
+    do {
+        while (tbl[*(stbl + i)].get(nocol) < p) i++;
+        while (tbl[*(stbl + j)].get(nocol) > p) j--;
+        if (i <= j){
+            temp = *(stbl + i);
+            *(stbl + i) = *(stbl + j);
+            *(stbl + j) = temp;
+            i++;
+            j--;
+        }
+    } while (i <= j);
+    if ( j > 0 ) qSortUi(nocol, stbl, j);
+    if ( k > i ) qSortUi(nocol, stbl + i, k-i);
+}
+
+
+void qSortStr(vector<int>::iterator stbl, int k){
+    int i = 0, j = k;
+    string p;
+    p = tbl[*(stbl+(k>>1))].measure;
+    int temp;
+    do {
+        while (tbl[*(stbl + i)].measure.compare(p) < 0) i++;
+        while (tbl[*(stbl + j)].measure.compare(p) > 0) j--;
+        if (i <= j){
+            temp = *(stbl + i);
+            *(stbl + i) = *(stbl + j);
+            *(stbl + j) = temp;
+            i++;
+            j--;
+        }
+    } while (i <= j);
+    if ( j > 0 ) qSortStr(stbl, j);
+    if ( k > i ) qSortStr(stbl + i, k-i);
+}
+
+void qSortI(vector<int>::iterator stbl, int k){
+    int i = 0, j = k;
+    int p;
+    p = *(stbl+(k>>1));
+    int temp;
 
     do {
-        while ( a[i] < p ) i++;
-        while ( a[j] > p ) j--;
+        while (*(stbl + i) < p) i++;
+        while (*(stbl + j) > p) j--;
         if (i <= j){
-            temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            temp = *(stbl + i);
+            *(stbl + i) = *(stbl + j);
+            *(stbl + j) = temp;
             i++;
             j--;
         }
     } while (i <= j);
 
-    if ( j > 0 ) quickSortR(a, j);
-    if ( N > i ) quickSortR(a+i, N-i);
-}
-
-void qSortStr(){
-}
-
-void qSortI(){
+    if ( j > 0 ) qSortI(stbl, j);
+    if ( k > i ) qSortI(stbl + i, k-i);
 }
 
 template<typename tmap, typename t> void putmap(tmap &map, t key, int value){
@@ -328,7 +388,7 @@ void getTable(){
 void printTableArr(list<int> arr, bool wo){
     int it = 0;
     for (auto i: arr){
-        if (tbl.find(i) != tbl.end()){
+        if (tbl.find(i) != tbl.end() && tbl[i].measure != "~"){
             cout << "-------------------------------\n"
                  << "Запись.............." << it                       << "\n"
                  << "Код детали.........." << tbl[i].detailCode      << "\n"
@@ -350,13 +410,14 @@ void printTableArr(list<int> arr, bool wo){
 
 void printTable(){
     for (auto i :stbl){
-        cout << "-------------------------------\n"
-             << "Запись.............." << i                      << "\n"
-             << "Код детали.........." << tbl[i].detailCode      << "\n"
-             << "Код материала......." << tbl[i].materialCode    << "\n"
-             << "Единица измерения..." << tbl[i].measure         << "\n"
-             << "Номер цеха.........." << tbl[i].workshopNum     << "\n"
-             << "Норма расхода......." << tbl[i].consumptionNorm << "\n";
+        if (tbl[i].measure != "~")
+            cout << "-------------------------------\n"
+                 << "Запись.............." << i                      << "\n"
+                 << "Код детали.........." << tbl[i].detailCode      << "\n"
+                 << "Код материала......." << tbl[i].materialCode    << "\n"
+                 << "Единица измерения..." << tbl[i].measure         << "\n"
+                 << "Номер цеха.........." << tbl[i].workshopNum     << "\n"
+                 << "Норма расхода......." << tbl[i].consumptionNorm << "\n";
     };  
     cout << "-------------------------------\n";
     cout << "[x] Назад\n";

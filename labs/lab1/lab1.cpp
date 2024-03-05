@@ -290,9 +290,7 @@ void bubbleSortUi(int nocol){
     }
 }
 
-void bubbleSortStr()
-{
-    string temp;
+void bubbleSortStr(){
     for (int i = 0; i < k - 1; i++) {
         for (int j = 0; j < k - 1 - i; j++) {
             if (tbl[j].measure.compare(tbl[j + 1].measure) > 0) {
